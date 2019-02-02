@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 /**
  *
  * @author nihar
@@ -39,7 +38,7 @@ public class StudentRestController {
         return studentService.getStudents();
 
     }
-
+    
     @RequestMapping("/student/{studentId}")
     @Transactional
     public Student getStudentById(@PathVariable int studentId) {

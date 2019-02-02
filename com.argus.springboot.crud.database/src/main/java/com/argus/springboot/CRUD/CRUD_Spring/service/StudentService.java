@@ -12,7 +12,6 @@ import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 /**
  *
  * @author nihar
@@ -31,7 +30,7 @@ public class StudentService implements StudentServices {
         Query<Student> query = currentSession.createQuery("from Student", Student.class);
 
         List<Student> student = query.getResultList();
-            currentSession.clear();
+        currentSession.clear();
         return student;
     }
 
@@ -41,7 +40,7 @@ public class StudentService implements StudentServices {
         Session currentSession = entityManager.unwrap(Session.class);
 
         Student student = currentSession.get(Student.class, id);
-currentSession.clear();
+        currentSession.clear();
         return student;
 
     }
@@ -52,8 +51,8 @@ currentSession.clear();
         Session currentSession = entityManager.unwrap(Session.class);
 
         currentSession.saveOrUpdate(student);
-       // currentSession.evict(student);
-       currentSession.clear();
+        // currentSession.evict(student);
+        currentSession.clear();
 
     }
 

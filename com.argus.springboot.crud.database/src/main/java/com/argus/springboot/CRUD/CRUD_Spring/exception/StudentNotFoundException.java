@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package com.argus.springboot.CRUD.CRUD_Spring.exception;
-
 /**
  *
  * @author nihar
