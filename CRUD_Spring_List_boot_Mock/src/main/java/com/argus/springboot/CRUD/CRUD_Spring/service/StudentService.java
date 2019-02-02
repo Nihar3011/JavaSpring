@@ -45,7 +45,6 @@ public class StudentService implements StudentServices {
     public void addStudent(Student student) {
         List<Student> ls = studentMock.getStudents().
                 stream().filter(p -> p.getId() == student.getId()).collect(Collectors.toList());
-
         if (ls.isEmpty()) {
             studentMock.getStudents().add(student);
         } else {

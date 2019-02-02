@@ -10,15 +10,14 @@ package com.argus.springboot.CRUD.CRUD_Spring.exception;
  * @author nihar
  */
 public class StudentErrorRespone {
- 
-     private int status;
+
+    private int status;
     private String message;
     private long timeStamp;
 
     public StudentErrorRespone() {
     }
 
-    
     public StudentErrorRespone(int status, String message, long timeStamp) {
         this.status = status;
         this.message = message;

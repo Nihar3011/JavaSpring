@@ -18,6 +18,7 @@ public class Student {
     private String email;
 
     public Student() {
+        System.out.println("Entered");
     }
 
     

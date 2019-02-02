@@ -16,8 +16,9 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class StudentMock {
- private ArrayList<Student> students;
-  
+
+    private ArrayList<Student> students;
+
     @PostConstruct
     public void loadData() {
         students = new ArrayList<>();
@@ -33,6 +34,5 @@ public class StudentMock {
     public ArrayList<Student> getStudents() {
         return students;
     }
-    
-    
+
 }

@@ -7,7 +7,6 @@ package com.argus.springboot.CRUD.CRUD_Spring.controller;
 
 import com.argus.springboot.CRUD.CRUD_Spring.exception.StudentNotFoundException;
 import com.argus.springboot.CRUD.CRUD_Spring.files.Student;
-import com.argus.springboot.CRUD.CRUD_Spring.service.StudentService;
 import com.argus.springboot.CRUD.CRUD_Spring.service.StudentServices;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,16 +38,15 @@ public class StudentRestController {
         return studentService.getStudents();
 
     }
-
     @RequestMapping("/student/{studentId}")
     public Student getStudentById(@PathVariable int studentId) {
-         List<Student> ls=studentService.getStudents().
-                stream().filter(p -> p.getId()==studentId).collect(Collectors.toList());
-       
-        if(ls.isEmpty()){
-              throw new StudentNotFoundException("Student Not Found With Id " + studentId);
-       }
-        
+        List<Student> ls = studentService.getStudents().
+                stream().filter(p -> p.getId() == studentId).collect(Collectors.toList());
+
+        if (ls.isEmpty()) {
+            throw new StudentNotFoundException("Student Not Found With Id " + studentId);
+        }
+
         return studentService.getStudentById(studentId);
     }
 
@@ -69,12 +67,12 @@ public class StudentRestController {
     @DeleteMapping("students/{studentId}")
     public String deleteStudentById(@PathVariable int studentId) {
 
-        List<Student> ls=studentService.getStudents().
-                stream().filter(p -> p.getId()==studentId).collect(Collectors.toList());
-       
-        if(ls.isEmpty()){
-              throw new StudentNotFoundException("Student Not Found With Id " + studentId);
-       }
+        List<Student> ls = studentService.getStudents().
+                stream().filter(p -> p.getId() == studentId).collect(Collectors.toList());
+
+        if (ls.isEmpty()) {
+            throw new StudentNotFoundException("Student Not Found With Id " + studentId);
+        }
         studentService.deleteStudentById(studentId);
         return "Delete Student id: " + studentId;
     }
