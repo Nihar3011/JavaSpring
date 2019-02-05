@@ -5,6 +5,7 @@
  */
 package com.argus.springboot.CRUD.security;
 
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -24,7 +25,7 @@ public class CustomBasicAuthenticationEntryPoint  extends BasicAuthenticationEnt
     		final HttpServletResponse response, 
     		final AuthenticationException authException) throws IOException, ServletException {
     	
-    	response.addHeader("WWW-Authenticate", "Basic realm=" + getRealmName() + "");
+    	response.addHeader("WWW-Authenticate", "Basic realm=");
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);    
         
         PrintWriter writer = response.getWriter();
