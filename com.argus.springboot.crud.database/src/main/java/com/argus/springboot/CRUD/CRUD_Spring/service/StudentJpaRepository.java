@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class StudentJpaRepository implements StudentServices {
-     
+
     @Autowired
     private StudentRepository studentRepository;
 
@@ -32,13 +32,11 @@ public class StudentJpaRepository implements StudentServices {
 
     @Override
     public void addUpdateStudent(Student student) {
-
         studentRepository.save(student);
-       
     }
 
     @Override
     public void deleteStudentById(int id) {
-         studentRepository.deleteById(id);
+        studentRepository.deleteById(id);
     }
 }
